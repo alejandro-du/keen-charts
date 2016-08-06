@@ -2,6 +2,7 @@ package org.vaadin.keen.charts;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.server.VaadinRequest;
+import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.themes.ValoTheme;
@@ -15,7 +16,7 @@ import io.keen.client.java.QueryType;
  * @author alejandro@vaadin.com
  */
 @Theme(ValoTheme.THEME_NAME)
-public class TestUI extends UI {
+public class DemoUI extends UI {
 
     private final String projectId = "579dc2a53831444785e06dd4";
 
@@ -42,8 +43,14 @@ public class TestUI extends UI {
                 .withInterval("daily")
                 .build());
 
-        HorizontalLayout layout = new HorizontalLayout();
-        layout.addComponents(chart1, chart2, chart3);
+        KeenChart chart4 = new KeenChart(projectId, readKey, KeenChartType.BARCHART, new Query.Builder(QueryType.COUNT)
+                .withEventCollection("gifts")
+                .withTimeframe(new AbsoluteTimeframe("2016-08-01", "2016-08-05"))
+                .withInterval("daily")
+                .build());
+
+        GridLayout layout = new GridLayout(2, 2);
+        layout.addComponents(chart1, chart2, chart3, chart4);
         layout.setSizeFull();
         layout.setMargin(true);
         layout.setSpacing(true);

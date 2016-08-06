@@ -4,6 +4,8 @@ Keen Charts is a Vaadin integration for Keen IO, an analytics service to easily 
 
 # Usage
 
+See instructions at https://vaadin.com/directory#!addon/keen-charts-add-on
+
 You don't need to recompile the widgetset in order to use this add-on. You need the project ID and the read key provided by Keen IO when you create an account at https://keen.io.
 
 Creating a chart is straightforward:

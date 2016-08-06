@@ -14,19 +14,24 @@ import java.nio.file.Paths;
 
 /**
  * A simple Java Application that starts a Jetty Server and initializes a Vaadin application.
+ * <p>
+ * To run the application with Maven, execute:<br/>
+ * <code>
+ * mvn exec:java -Dexec.mainClass="org.vaadin.keen.charts.DemoApp" -Dexec.classpathScope=test
+ * </code>
  *
  * @author alejandro@vaadin.com
  */
-public class TestApp {
+public class DemoApp {
 
     public static void main(String[] args) throws Exception {
         Server server = new Server(9090);
-        server.setHandler(buildHandler(TestUI.class.getName()));
+        server.setHandler(buildHandler(DemoUI.class.getName()));
         server.start();
     }
 
     private static Handler buildHandler(String uiClassName) throws IOException {
-        Path webappPath = Paths.get("test-app-webapp");
+        Path webappPath = Paths.get("demo-app-webapp");
         Files.deleteIfExists(webappPath);
         String war = Files.createDirectory(webappPath).toString();
 

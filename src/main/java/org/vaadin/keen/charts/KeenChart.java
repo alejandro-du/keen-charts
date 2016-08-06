@@ -6,6 +6,8 @@ import io.keen.client.java.Query;
 
 import java.io.IOException;
 import java.io.StringWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A Vaadin Component that wraps a Keen IO chart.
@@ -25,16 +27,36 @@ public class KeenChart extends AbstractJavaScriptComponent {
     public KeenChart(String projectId,
                      String readKey,
                      Query query) {
+        this(projectId, readKey, null, query);
+    }
+
+    public KeenChart(String projectId,
+                     String readKey,
+                     KeenChartType chartType,
+                     Query query) {
         try {
             setSizeFull();
-            StringWriter writer = new StringWriter();
-            new JacksonJsonHandler().writeJson(writer, query.constructQueryArgs());
+            Map<String, Object> customArgsMap = new HashMap<>();
 
-            callFunction("draw", projectId, readKey, query.getQueryType().toString(), writer.toString());
+            if (chartType != null) {
+                customArgsMap.put("chartType", chartType.toString().toLowerCase());
+            }
+
+            String args = toString(query.constructQueryArgs());
+            String customArgs = toString(customArgsMap);
+
+            String queryType = query.getQueryType().toString();
+            callFunction("draw", projectId, readKey, queryType, args, customArgs);
 
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
+    }
+
+    private String toString(Map<String, Object> map) throws IOException {
+        StringWriter writer = new StringWriter();
+        new JacksonJsonHandler().writeJson(writer, map);
+        return writer.toString();
     }
 
 }
