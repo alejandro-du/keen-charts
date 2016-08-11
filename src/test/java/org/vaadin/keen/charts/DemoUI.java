@@ -3,12 +3,12 @@ package org.vaadin.keen.charts;
 import com.vaadin.annotations.Theme;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.GridLayout;
-import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.themes.ValoTheme;
 import io.keen.client.java.AbsoluteTimeframe;
 import io.keen.client.java.Query;
 import io.keen.client.java.QueryType;
+import org.vaadin.jetty.VaadinJettyServer;
 
 /**
  * A simple UI containing some KeenCharts.
@@ -17,6 +17,11 @@ import io.keen.client.java.QueryType;
  */
 @Theme(ValoTheme.THEME_NAME)
 public class DemoUI extends UI {
+
+    public static void main(String[] args) throws Exception {
+        VaadinJettyServer server = new VaadinJettyServer(8080, DemoUI.class);
+        server.start();
+    }
 
     private final String projectId = "579dc2a53831444785e06dd4";
 
