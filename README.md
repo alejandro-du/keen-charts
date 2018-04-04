@@ -1,3 +1,7 @@
+[![Published on vaadin.com/directory](https://img.shields.io/vaadin-directory/status/keen-charts-add-on.svg)](https://img.shields.io/vaadin-directory/status/keen-charts-add-on.svg)
+[![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/keen-charts-add-on.svg)](https://img.shields.io/vaadin-directory/star/keen-charts-add-on.svg)
+[![Latest version on vaadin.com/directory](https://img.shields.io/vaadin-directory/v/keen-charts-add-on.svg)](https://img.shields.io/vaadin-directory/v/keen-charts-add-on.svg)
+
 # Keen Charts Add-on for Vaadin
 
 Keen Charts is a Vaadin integration for Keen IO, an analytics service to easily collect, explore, and visualize data.
