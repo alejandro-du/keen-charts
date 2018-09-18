@@ -1,5 +1,5 @@
-[![Published on vaadin.com/directory](https://img.shields.io/vaadin-directory/status/keen-charts-add-on.svg)](https://img.shields.io/vaadin-directory/status/keen-charts-add-on.svg)
-[![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/keen-charts-add-on.svg)](https://img.shields.io/vaadin-directory/star/keen-charts-add-on.svg)
+[![Published on Vaadin  Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/keen-charts-add-on)
+[![Stars on Vaadin Directory](https://img.shields.io/vaadin-directory/star/keen-charts-add-on.svg)](https://vaadin.com/directory/component/keen-charts-add-on)
 [![Latest version on vaadin.com/directory](https://img.shields.io/vaadin-directory/v/keen-charts-add-on.svg)](https://img.shields.io/vaadin-directory/v/keen-charts-add-on.svg)
 
 # Keen Charts Add-on for Vaadin
